@@ -1,0 +1,33 @@
+@use '../../../style/setting' as f;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+
+  text-align: justify;
+  line-height: 2rem;
+
+  background-color: var(--element-color);
+
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 100%;
+  height: max-content;
+
+  border-radius: 10px;
+
+  //box-shadow: -1px -1px 5px var(--on-element-color);
+  //box-shadow: 0 0 5px var(--on-element-color);
+
+  &_header {
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+  }
+}
+
+@media (max-width: f.$container-max-widths-lg) {
+  .card_header {
+    text-align: center;
+  }
+}

@@ -1,0 +1,44 @@
+@use '../../../style/setting' as f;
+
+.switch {
+  display: inline-block;
+  position: relative;
+
+  cursor: pointer;
+
+  width: 60px;
+  height: 34px;
+
+  input {
+    display: none;
+  }
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: var(--on-background-color);
+
+  transition: .4s;
+  border-radius: 25px;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    top: 4px;
+    left: 4px;
+    background-color: var(--background-color);
+    transition: .5s;
+    border-radius: 50%;
+  }
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}

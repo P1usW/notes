@@ -1,0 +1,17 @@
+@use '../../../style/z-index-constant' as z;
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  background-color: white;
+
+  width: 10rem;
+  height: 100vh;
+
+  //transform: translate(-10rem);
+  transition: transfrom 0.25s linear;
+
+  z-index: z.$ui-index-4;
+}

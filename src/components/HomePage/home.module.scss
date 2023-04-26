@@ -1,0 +1,20 @@
+@use '../../style/setting' as f;
+
+.home {
+  display: grid;
+  position: relative;
+
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 25px;
+
+  margin: 15px;
+
+  height: max-content;
+}
+
+
+@media (max-width: f.$container-max-widths-lg) {
+  .home {
+    grid-template-columns: 1fr;
+  }
+}

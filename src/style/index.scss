@@ -1,0 +1,77 @@
+@use 'setting' as f;
+
+:root[data-theme=light]{
+  --primary-color: #{f.$primary-color-light};
+  --on-primary-color: #{f.$on-primary-color-light};
+
+  --background-color: #{f.$background-color-light};
+  --on-background-color: #{f.$on-background-color-light};
+
+  --element-color: #{f.$element-color-light};
+  --on-element-color: #{f.$on-element-color-light};
+
+  --error-color: #{f.$error-color-light};
+  --on-error-color: #{f.$on-error-color-light};
+
+  --hovered: #{f.$light-hovered};
+  --focused: #{f.$light-focused};
+  --pressed: #{f.$light-pressed};
+}
+
+
+:root[data-theme=dark] {
+  --primary-color: #{f.$primary-color-dark};
+  --on-primary-color: #{f.$on-primary-color-dark};
+
+  --background-color: #{f.$background-color-dark};
+  --on-background-color:#{f.$on-background-color-dark};
+
+  --element-color: #{f.$element-color-dark};
+  --on-element-color: #{f.$on-element-color-dark};
+
+  --error-color: #{f.$error-color-dark};
+  --on-error-color: #{f.$on-error-color-dark};
+
+  --hovered: #{f.$dark-hovered};
+  --focused: #{f.$dark-focused};
+  --pressed: #{f.$dark-pressed};
+}
+
+:root {
+  --primary-variant-color: #{f.$primary-variant-color};
+
+  --secondary-color: #{f.$secondary-color};
+  --on-secondary-color: #{f.$on-secondary-color};
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+html[data-theme=light] {
+  color-scheme: light;
+}
+
+html[data-theme=dark] {
+  color-scheme: dark;
+}
+
+body {
+  color: var(--on-background-color);
+  font-family: f.$font-family;
+
+  //background-color: f.$background-color-main;
+  background-color: var(--background-color);
+
+  transition: background-color 0.25s linear;
+}
+
+#root {
+  max-width: f.$container-max-widths-xll;
+  margin: 0 auto;
+}

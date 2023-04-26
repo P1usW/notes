@@ -1,0 +1,82 @@
+@use '../../style/setting' as f;
+
+.header_nav {
+    margin: 0 auto;
+    width: 100%;
+    height: 5rem;
+}
+
+
+.nav {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+
+    &_left, &_right {
+        display: flex;
+    }
+}
+
+.nav_left {
+
+}
+
+.nav_right {
+    margin: {
+        left: auto;
+        right: 15px;
+    };
+
+}
+
+.nav_logo {
+    object-fit: contain;
+    height: 2rem;
+    width: 2rem;
+}
+
+.nav_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+    background-color: var(--element-color);
+
+    width: 80px;
+    height: 34px;
+
+    margin: {
+        left: 15px;
+    }
+
+    color: var(--on-background-color-light);
+    text-decoration: none;
+    font-weight: bolder;
+
+    transition: all 0.25s linear;
+}
+
+
+@media (min-width: f.$container-max-widths-xll){
+    .header_nav {
+        max-width: f.$container-max-widths-xll;
+    }
+}
+
+@media (pointer: fine) and (hover: hover) {
+    .nav_link:hover {
+        color: var(--primary-color);
+        background-color: var(--focused);
+    }
+}
+
+@media (pointer: fine) and (hover: hover) {
+    .nav_link:active {
+        background-color: var(--pressed);
+    }
+}

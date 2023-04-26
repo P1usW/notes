@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@src/*": ["src/*"],
+            "@style": ["src/style/*"],
+            "@components": ["src/component/*"]
+        },
+        "target": "es6",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "plugins": [
+            {
+                "name": "typescript-plugin-css-modules",
+                "options": {
+                    "classnameTransform": "dashes",
+                    "noUncheckedIndexedAccess": true
+                }
+            }
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "noEmit": true,
+        "noEmitOnError": true
+    },
+    "exclude": ["node_modules", "build", "dist", ".idea"],
+    "include": ["src", ".eslintrc.json"],
+    "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
+
+}

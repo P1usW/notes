@@ -1,0 +1,82 @@
+$font-family: 'Montserrat', sans-serif;
+
+
+// size
+$container-max-widths-sm: 540px;
+$container-max-widths-md: 720px;
+$container-max-widths-lg: 960px;
+$container-max-widths-xl: 1140px;
+$container-max-widths-xll: 1320px;
+
+
+// light-palette
+$light-00dp: #ffffff;
+$light-01dp: #f2f2f2;
+$light-02dp: #ececec;
+$light-03dp: #eaeaea;
+$light-04dp: #e8e8e8;
+$light-06dp: #e3e3e3;
+$light-08dp: #e0e0e0;
+$light-12dp: #dcdcdc;
+$light-16dp: #d8d8d8;
+$light-24dp: #d6d6d6;
+
+// light-color
+$primary-color-light: #6200ee;
+$on-primary-color-light: #000000;
+
+$background-color-light: $light-00dp;
+$on-background-color-light: #000000;
+
+$element-color-light: $light-01dp;
+$on-element-color-light: #1d1d1d;
+
+$error-color-light: #b00020;
+$on-error-color-light: #ffffff;
+
+// light-event
+  $light-hovered: $light-02dp;
+  $light-focused: $light-08dp;
+  $light-pressed: $light-06dp;
+  $light-dragged: $light-03dp;
+//
+
+
+// dark-palette
+$dark-00dp: #121212;
+$dark-01dp: #1e1e1e;
+$dark-02dp: #222222;
+$dark-03dp: #242424;
+$dark-04dp: #272727;
+$dark-06dp: #2c2c2c;
+$dark-08dp: #2e2e2e;
+$dark-12dp: #333333;
+$dark-16dp: #343434;
+$dark-24dp: #383838;
+
+// dark-color
+$primary-color-dark: #bb86fc;
+$on-primary-color-dark: #ffffff;
+
+$background-color-dark: $dark-00dp;
+$on-background-color-dark: #ffffff;
+
+$element-color-dark: $dark-01dp;
+$on-element-color-dark: #e1e1e1;
+
+$error-color-dark: #cf6679;
+$on-error-color-dark: #000000;
+
+// dark-event
+  $dark-hovered: $dark-02dp;
+  $dark-focused: $dark-08dp;
+  $dark-pressed: $dark-06dp;
+  $dark-dragged: $dark-03dp;
+//
+
+
+// general-color
+$primary-variant-color: #3700b3;
+
+$secondary-color: #03dac6;
+$on-secondary-color: #000000;
