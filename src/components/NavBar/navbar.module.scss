@@ -6,7 +6,6 @@
     height: 5rem;
 }
 
-
 .nav {
     display: flex;
     align-items: center;
@@ -16,21 +15,19 @@
 
     background-color: transparent;
 
-    &_left, &_right {
+    &_left,
+    &_right {
         display: flex;
     }
 }
 
-.nav_left {
-
-}
+.nav_left {}
 
 .nav_right {
     margin: {
         left: auto;
         right: 15px;
-    };
-
+    }
 }
 
 .nav_logo {
@@ -61,8 +58,7 @@
     transition: all 0.25s linear;
 }
 
-
-@media (min-width: f.$container-max-widths-xll){
+@media (min-width: f.$container-max-widths-xll) {
     .header_nav {
         max-width: f.$container-max-widths-xll;
     }

@@ -1,22 +1,26 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {addPosts, clearPosts} from "@src/store/posts/postsActions";
 
-const initialState = []
+interface Posts {
+  username: string,
+  content: string,
+}
 
-// @ts-ignore
+const initialState: Posts[] = [];
+
 const postsReducer = createSlice({
   name: 'posts',
   initialState,
   reducers: {},
   extraReducers: builder => {
     builder
-      .addCase(addPosts, (state, action) => {
-        return 1
+      .addCase(addPosts, (state: Posts[]) => {
+        return state
       })
-      .addCase(clearPosts, (state, action) => {
-        return 2
+      .addCase(clearPosts, (state: Posts[]) => {
+        return state
       })
   }
 });
 
-export default postsReducer
+export default postsReducer.reducer

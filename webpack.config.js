@@ -6,6 +6,7 @@ const srcPath = path.resolve(__dirname, './src/');
 const buildPath = path.resolve(__dirname, './build/');
 
 const isDevMode = true;
+const servePort = process.env.PORT || 8080
 
 // style files regexes
 const cssRegex = /\.css$/;
@@ -150,7 +151,7 @@ module.exports = function (env, argv) {
       compress: true,
       open: true,
       hot: true,
-      port: 8080,
+      port: port,
       historyApiFallback: true,
       client: {
         logging: 'info',

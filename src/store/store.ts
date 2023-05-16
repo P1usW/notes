@@ -6,4 +6,12 @@ const store = configureStore({
     devTools: process.env.NODE_ENV !== 'production',
 });
 
+type StoreState = ReturnType<typeof store.getState>;
+type StoreDispatch = typeof store.dispatch;
+
 export default store
+
+export type {
+    StoreState,
+    StoreDispatch
+}

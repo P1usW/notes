@@ -1,11 +1,7 @@
 interface User {
-  id: number,
-  username: string,
-  password: string,
-  mail: string,
-  fname?: string,
-  lname?: string,
-  age?: Date;
+  email: string | null,
+  token: string | null,
+  id: number | string | null 
 }
 
-export default User
+export default User;

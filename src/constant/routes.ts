@@ -8,7 +8,11 @@ const Blog = React.lazy(
 );
 
 const Login = React.lazy(
-  () => import(/* webpackChunkName: "Login" */ '@src/components/AuthForm/Login')
+  () => import(/* webpackChunkName: "Login" */ '@src/components/AuthForm/Login/Login')
+);
+
+const Register = React.lazy(
+  () => import(/* webpackChunkName: "Register" */ '@src/components/AuthForm/Register/Register')
 );
 
 const NotFound = React.lazy(
@@ -27,6 +31,10 @@ const routes = [
   {
     path: '/login',
     element: Login,
+  },
+  {
+    path: '/register',
+    element: Register,
   },
   {
     path: '/blog',
