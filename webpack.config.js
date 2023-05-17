@@ -151,7 +151,7 @@ module.exports = function (env, argv) {
       compress: true,
       open: true,
       hot: true,
-      port: port,
+      port: servePort,
       historyApiFallback: true,
       client: {
         logging: 'info',
@@ -163,7 +163,7 @@ module.exports = function (env, argv) {
         webSocketURL: {
           hostname: '0.0.0.0',
           pathname: '/ws',
-          port: 8080,
+          port: servePort,
           protocol: 'ws',
         },
       },

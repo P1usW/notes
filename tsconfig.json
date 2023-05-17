@@ -35,5 +35,4 @@
     "exclude": ["node_modules", "build", "dist", ".idea"],
     "include": ["src", ".eslintrc.json"],
     "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
-
 }

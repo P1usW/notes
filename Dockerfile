@@ -12,4 +12,6 @@ ENV PORT 8080
 
 EXPOSE $PORT
 
+VOLUME [ "/app/data" ]
+
 CMD ["npx", "webpack", "serve"]
