@@ -3,8 +3,8 @@
         "baseUrl": "./",
         "paths": {
             "@src/*": ["src/*"],
-            "@style": ["src/style/*"],
-            "@components": ["src/component/*"]
+            "@style/*": ["src/style/*"],
+            "@components/*": ["src/component/*"]
         },
         "target": "es6",
         "lib": ["dom", "dom.iterable", "esnext"],
@@ -32,7 +32,7 @@
         "noEmit": true,
         "noEmitOnError": true
     },
-    "exclude": ["node_modules", "build", "dist", ".idea"],
+    "exclude": ["node_modules", "build", "dist", ".idea", ".vscode"],
     "include": ["src", ".eslintrc.json"],
     "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
 }

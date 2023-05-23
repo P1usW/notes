@@ -22,7 +22,9 @@
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.59.0",
     "babel-loader": "^9.1.2",
+    "compression-webpack-plugin": "^10.0.0",
     "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^5.0.0",
     "dart-sass": "^1.25.0",
     "dotenv": "^16.0.3",
     "eslint": "^8.40.0",
@@ -38,6 +40,7 @@
     "firebase": "^9.22.0",
     "firebase-tools": "^12.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8.4.22",
     "postcss-loader": "^7.2.4",
     "postcss-preset-env": "^8.3.2",
@@ -45,17 +48,19 @@
     "sass-loader": "^13.2.2",
     "style-loader": "^3.3.2",
     "ts-loader": "^9.4.2",
+    "tsconfig-paths-webpack-plugin": "^4.0.1",
     "typescript": "^5.0.4",
     "typescript-plugin-css-modules": "^5.0.1",
     "typings-for-css-modules-loader": "^1.7.0",
     "webpack": "^5.78.0",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.13.2"
+    "webpack-dev-server": "^4.13.2",
+    "webpack-merge": "^5.9.0"
   },
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "serve": "npx webpack serve",
+    "serve": "npx webpack serve --port 8080",
     "eslint": "eslint --ext .ts,.tsx src --fix"
   },
   "keywords": [
