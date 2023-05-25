@@ -5,8 +5,8 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // constant path
-const srcPath = path.resolve(__dirname, './src/');
-const buildPath = path.resolve(__dirname, './build/');
+const srcPath = path.resolve(__dirname, 'src');
+const buildPath = path.resolve(__dirname, 'build');
 
 // style files regex's
 const cssRegex = /\.css$/;
@@ -14,27 +14,30 @@ const cssRegex = /\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
+// (bytes) threshold for compression, url-loader plugins
+const filesThreshold = 8196;
+
 module.exports = function (env, argv) {
   const isDevServer = env.WEBPACK_SERVE;
   const mode = argv.mode || (isDevServer ? 'development' : 'production');
   const isDevMode = mode !== 'production';
   
   return {
+    target: ['browserslist'],
     // Webpack noise constrained to errors and warnings
     stats: 'errors-warnings',
      // entryPoint for webpack
     entry: path.resolve(srcPath, 'index.tsx'),
+    // webpack mode
+    mode: mode,
     output: {
       // build path output
       path: buildPath,
-      
-      filename: "[name].js",
-      chunkFilename: "[name].js",
       // clean build folder
       clean: true,
       // This is an important option when using on-demand-loading or loading external resources like images, files, etc.
       // If an incorrect value is specified you'll receive 404 errors while loading these resources.
-      publicPath: 'static/js/',
+      publicPath: '/',
       // file and chunk names
       filename: isDevMode
         ? 'static/js/[name].js'
@@ -42,6 +45,7 @@ module.exports = function (env, argv) {
       chunkFilename: isDevMode
         ? 'static/js/[name].chunk.js'
         : 'static/js/[name].[contenthash:8].chunk.js',
+      assetModuleFilename: 'static/media/[name].[hash][ext]',
     },
     module: {
       rules: [
@@ -155,7 +159,14 @@ module.exports = function (env, argv) {
         {
           test: /\.(png|svg|jpe?g|gif)$/,
           exclude: /node_modules/,
-          use: ['file-loader'],
+          use: [
+            {
+              loader: require.resolve('file-loader'),
+              options: {
+                name: 'static/media/[name].[hash].[ext]',
+              },
+            },
+          ],
         },
       ],
     },

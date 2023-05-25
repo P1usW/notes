@@ -4,22 +4,21 @@ const TerserPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const common = require("./webpack.common");
 
+// (bytes) threshold for compression, url-loader plugins
+const filesThreshold = 8196;
+
 module.exports = (env, argv) => {
   const commonConfig = common(env, argv);
 
   const extendedConfig = {
-    mode: "production",
     devtool: argv.sourceMap != null ? "source-map" : false, // option controls how source maps are generated (affects on build speed dramatically): https://v4.webpack.js.org/configuration/devtool/
-    output: {
-      filename: "[name].[contenthash:8].js", // contenthash-this is version for avoding browser-cache issue: user always has to get the last version of files
-      chunkFilename: "[name].[contenthash:8].js",
-    },
     performance: {
       assetFilter: function assetFilter(assetFilename) {
         return !/(\.map$)|(fonts)|(images)/.test(assetFilename); // ignore these files from perfomance-hints
       },
     },
     optimization: {
+      minimize: true,
       minimizer: [
         new TerserPlugin({
           // default webpack plugin for js-optimization which should be configured: https://v4.webpack.js.org/configuration/optimization/#optimizationminimizer
@@ -45,7 +44,7 @@ module.exports = (env, argv) => {
       // additional config for plugins is placed in webpack.common.js
       new CompressionPlugin({
         // optional: it creates gzipped (compressed) files in '[path].gz[query]'
-        threshold: common.filesThreshold, // (bytes). Only assets bigger than this size are processed
+        threshold: filesThreshold, // (bytes). Only assets bigger than this size are processed
       }),
     ],
   };
